@@ -25,6 +25,12 @@ export interface PersonalBest {
   date: string;
 }
 
+export interface Goal {
+  exercise: string;
+  goal_one_rm: number;
+  updated_at: string;
+}
+
 export interface ExerciseStats {
   exercise: string;
   total_sessions: number;

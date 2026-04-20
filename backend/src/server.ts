@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import workoutsRouter from './routes/workouts';
 import statsRouter from './routes/stats';
+import goalsRouter from './routes/goals';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use(express.json());
 
 app.use('/api/workouts', workoutsRouter);
 app.use('/api/stats', statsRouter);
+app.use('/api/goals', goalsRouter);
 
 // List of valid exercises — single source of truth exposed to the frontend
 app.get('/api/exercises', (_req, res) => {

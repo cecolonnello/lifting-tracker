@@ -8,13 +8,15 @@ import {
   Dumbbell,
   Menu,
   X,
+  Target,
 } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { to: '/',          label: 'Dashboard', icon: LayoutDashboard },
+  { to: '/',          label: 'Dashboard',   icon: LayoutDashboard },
   { to: '/log',       label: 'Log Workout', icon: PlusCircle },
-  { to: '/progress',  label: 'Progress',  icon: TrendingUp },
-  { to: '/analytics', label: 'Analytics', icon: BarChart2 },
+  { to: '/progress',  label: 'Progress',    icon: TrendingUp },
+  { to: '/goals',     label: 'Goals',       icon: Target },
+  { to: '/analytics', label: 'Analytics',   icon: BarChart2 },
 ];
 
 export default function Navbar() {

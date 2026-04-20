@@ -5,6 +5,7 @@ import LogWorkout from '@/pages/LogWorkout';
 import ExerciseProgress from '@/pages/ExerciseProgress';
 import ExerciseDetail from '@/pages/ExerciseDetail';
 import Analytics from '@/pages/Analytics';
+import Goals from '@/pages/Goals';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="progress" element={<ExerciseProgress />} />
           <Route path="progress/:exercise" element={<ExerciseDetail />} />
           <Route path="analytics" element={<Analytics />} />
+          <Route path="goals" element={<Goals />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

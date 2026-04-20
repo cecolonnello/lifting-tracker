@@ -63,6 +63,12 @@ db.exec(`
 
   CREATE INDEX IF NOT EXISTS idx_workouts_exercise ON workouts (exercise);
   CREATE INDEX IF NOT EXISTS idx_workouts_date     ON workouts (date);
+
+  CREATE TABLE IF NOT EXISTS goals (
+    exercise   TEXT PRIMARY KEY,
+    goal_one_rm REAL NOT NULL CHECK (goal_one_rm > 0),
+    updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
 `);
 
 export default db;

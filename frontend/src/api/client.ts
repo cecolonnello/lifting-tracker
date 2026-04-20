@@ -2,6 +2,7 @@ import {
   CreateWorkoutPayload,
   DashboardData,
   ExerciseDetail,
+  Goal,
   PersonalBest,
   Workout,
 } from '@/types';
@@ -69,3 +70,16 @@ export const getExerciseDetail = (exercise: string, params?: {
 };
 
 export const getPersonalBests = () => request<PersonalBest[]>('/stats/personal-bests');
+
+// ── Goals ──────────────────────────────────────────────────────────────────────
+
+export const getGoals = () => request<Goal[]>('/goals');
+
+export const setGoal = (exercise: string, goal_one_rm: number) =>
+  request<Goal>(`/goals/${encodeURIComponent(exercise)}`, {
+    method: 'PUT',
+    body: JSON.stringify({ goal_one_rm }),
+  });
+
+export const deleteGoal = (exercise: string) =>
+  request<void>(`/goals/${encodeURIComponent(exercise)}`, { method: 'DELETE' });
